@@ -8,6 +8,7 @@ import PersonDetails from '../personDetails';
 import './app.css';
 
 const App = () => {
+
   return (
     <div>
       <Header />

@@ -24,7 +24,7 @@ export default class RandomPlanet extends Component {
   updatePlanet() {
     this.swapiService.getPlanet(7)
         .then((planet) => {
-          this.setState({
+          this.setState({  //ты пытаешься корректировать стейт у еще несмонтированного компонента. Либо пробрасывай это пропсами, либо задавай напрямую в стейте. Реакт на такое ругается, т.к. ты асинхронно меняешь данные, но не в методе жизненного цикла
             name: planet.name,
             populatin: planet.population,
             rotationPeriod: planet.rotation_period,
