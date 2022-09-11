@@ -1,0 +1,17 @@
+.error-indicator > img {
+    display: block;
+    margin: 0 auto;
+}
+
+.error-indicator {
+    color: khaki;
+    margin: 0 auto;
+    text-align: center;
+}
+.error-indicator > span {
+    display: block;
+}
+
+.boom {
+    font-size: 40px;
+}
