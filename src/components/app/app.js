@@ -33,7 +33,7 @@ export default class App extends React.Component {
             <ItemList onPersonSelected={this.onPersonSelected}/>
           </div>
           <div className="col-md-6">
-            <PersonDetails />
+            <PersonDetails personId={this.state.selectedPerson}/>
           </div>
         </div>
       </div> 

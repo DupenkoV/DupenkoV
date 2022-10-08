@@ -4,7 +4,7 @@ import Spinner from '../spinner';
 
 import './itemList.css';
 
-export default class ItemList extends Component {
+class ItemList extends Component {
   constructor() {
     super();
 
@@ -51,3 +51,5 @@ export default class ItemList extends Component {
     );
   }
 }
+
+export default React.memo(ItemList)
