@@ -25,11 +25,13 @@ export default class App extends React.Component {
         <Header />
         <RandomPlanet />
         <PeoplePage getData={this.SwapiService.getAllPeople}
-                    getItem={this.SwapiService.getPerson} 
-                    renderItem={({name, gender}) => `${name} (gender: ${gender})`} />
+                    getItem={this.SwapiService.getPerson}>
+          {(i) => `${i.name} (gender: ${i.gender})`}
+        </ PeoplePage>
         <PeoplePage getData={this.SwapiService.getAllPlanets}
-                    getItem={this.SwapiService.getPlanet} 
-                    renderItem={({name, diametr}) => `${name} (diametr: ${diametr})`}/>
+                    getItem={this.SwapiService.getPlanet}>
+          {(i) => `${i.name} (diametr: ${i.diametr})`}
+        </ PeoplePage>
       </div> 
     );
   }

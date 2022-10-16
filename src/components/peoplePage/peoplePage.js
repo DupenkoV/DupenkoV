@@ -2,7 +2,7 @@ import React from "react";
 import PersonDetails from "../personDetails"
 import ItemList from "../itemList/itemList";
 import Row from "../Row";
-
+import ErrorBoundry from "../errorBoundry";
 
 
 export default class ItemPage extends React.Component {
@@ -24,8 +24,9 @@ export default class ItemPage extends React.Component {
     render() {
       const itemList = (
         <ItemList onItemSelected={this.onItemSelected}
-                      getData={this.props.getData}
-                      renderItem={this.props.renderItem}/>
+                      getData={this.props.getData}>
+          {this.props.children}
+        </ItemList>
       )
 
       const itemDetails = (
@@ -34,7 +35,9 @@ export default class ItemPage extends React.Component {
       )
 
       return (
-        <Row left={itemList} right={itemDetails} />
+        <ErrorBoundry>
+          <Row left={itemList} right={itemDetails} />
+        </ErrorBoundry>
       )
     }
 }
